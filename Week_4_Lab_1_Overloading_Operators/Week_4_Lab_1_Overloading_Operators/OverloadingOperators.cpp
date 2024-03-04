@@ -1,4 +1,4 @@
-/*
+*
  Program Name: OverloadingOperators.cpp
  Programmer: Moris Gomez
  Date: Saturday 03/02/2024
@@ -56,25 +56,25 @@ public:
        denom = de;
     }
     
-//START declaration of friend functions for operator overloadind inside class.
-    //protoype for multiplication operator overload -> allows mulptlying of fractions:
+//START declaration of friend functions for operator overloading inside class.
+    //protoype for multiplication operator overload -> allows multiplying of fractions:
     friend Fraction operator * (Fraction f1, Fraction f2);
     
-    //protoype for insertion operator overload -> allows 'cout' of a fraction:
+    //prototype for insertion operator overload -> allows 'cout' of a fraction:
     friend ostream& operator << (ostream&o, const Fraction&f);
     
-    //protoype for extraction operator overload -> allows 'cin' of a fraction:
+    //prototype for extraction operator overload -> allows 'cin' of a fraction:
     friend istream& operator >> (istream&i, Fraction&f);
     
-    //protoype for division operator overload -> allows dividing of fractions:
+    //prototype for division operator overload -> allows dividing of fractions:
     friend Fraction operator / (Fraction f1, Fraction f2);
     
-    //protoype for comparison operator overload -> allows comparing of fractions:
+    //prototype for comparison operator overload -> allows comparing of fractions:
     friend void operator == (Fraction f1, Fraction f2);
-//END declaration of friend functions for operator overloadind inside class.
+//END declaration of friend functions for operator overloading inside class.
 }; //END FRACTION CLASS.
 
-//START definition of friend functions for operator overloadind outside class.
+//START definition of friend functions for operator overloading outside class.
     //body for multiplication operator overload:
     Fraction operator * (Fraction f1, Fraction f2)
     {
@@ -97,7 +97,7 @@ public:
     {
         o << f.getNumerator() << "/" << f.getDenominator();
         //e.g cout << 13 << << "/" << 15;
-        //whenver we use << it will take in cout << num/denom.
+        //whenever we use << it will take in cout << num/denom.
         //a fraction is what we are passing through friend function.
         return o; //return a 'cout' or ostream&.
     } //end insertion operator overload friend function.
@@ -138,7 +138,7 @@ public:
             cout << f1 << " = " << f2 << " so fractions are the same" << endl;
         }
     } //end comparison operator overload friend function.
-//END OF DEFINTION OF FRIEND FUNCTIONS OUTSIDE OF CLASS.
+//END OF DEFINITION OF FRIEND FUNCTIONS OUTSIDE OF CLASS.
 
 //START driver for program via main function:
 int main()
@@ -151,12 +151,12 @@ int main()
     cout << "enter second fraction: "; //using insertion overloader.
     cin >> fr2; //using extraction operator overloader.
     
-    //using muliplication opertor overloader:
+    //using multiplication opertor overloader:
     Fraction product; //create default object.
     product = fr1 * fr2;
     //pass user's 2 objects (w/ num and denom each) from Fraction class into the '*' friend function.
     //friend function returns a single Fraction object (product of f1 * f2 w/ num and denom) & assigns it to object 'product'.
-    cout << "your fractions mulitplied: " << product << endl; //using insertion operator overloader.
+    cout << "your fractions multiplied: " << product << endl; //using insertion operator overloader.
     
     //using division operator overloader:
     Fraction quotient;
